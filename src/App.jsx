@@ -1,32 +1,21 @@
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import TextLogo from './components/atom/text-logo.jsx';
+import NavigationBar from './components/organism/navbar.jsx';
+import Dashboard from './pages/dashboard.jsx';
 import './App.css';
 
-// Placeholder Pages (we will build the real ones in Step 4)
-const Dashboard = () => <div className="page-header"><h2>Overview Metrics</h2></div>;
-const Experience = () => <div className="page-header"><h2>Work Experience</h2></div>;
-const Projects = () => <div className="page-header"><h2>Project Portfolio</h2></div>;
+const Experience = () => <div><h2>Experience</h2></div>;
+const Projects = () => <div><h2>Projects</h2></div>;
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="dashboard-container">
-        {/* Sidebar Navigation */}
-        <aside className="sidebar">
-          <div className="logo">DataDash.</div>
-          <nav className="nav-menu">
-            <NavLink to="/" end className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
-              Dashboard
-            </NavLink>
-            <NavLink to="/experience" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
-              Experience
-            </NavLink>
-            <NavLink to="/projects" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
-              Projects
-            </NavLink>
-          </nav>
-        </aside>
+      <div className="container">
+        <header className="top-header">
+          <TextLogo />
+          <NavigationBar />
+        </header>
 
-        {/* Main Content Area */}
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Dashboard />} />
