@@ -18,7 +18,7 @@ const WelcomeKpi = () => {
         </h1>
         <p className="greeting-subtext">Aspiring Data Analyst</p>
       </div>
-      
+
       <div className="kpi-container">
         {kpiData.map((item) => (
           <KPI key={item.id} value={item.value} text={item.text} />

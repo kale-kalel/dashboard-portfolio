@@ -1,5 +1,6 @@
 /* GLOBAL */
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&display=swap');
+
 @font-face {
   font-family: 'Myanmar Khyay';
   src: url('./assets/fonts/Khyay-Regular.ttf') format('truetype');
@@ -16,96 +17,118 @@
 
 /* BODY */
 
-.container {
-  width: 100%;
-  max-width: 96%;
-  margin: 0 auto;
-  padding: 1rem 1rem; 
-}
 body {
   background: linear-gradient(160deg, #EBF2FF 0%, #BCC7DC 50%, #EBF2FF 100%);
   background-attachment: fixed;
   min-height: 100vh;
 }
-.top-header { /* Top Header Layout */
+
+.top-header {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  min-height: 50px;
 }
 
 /* NAVBAR */
 
-.text-logo { /* Logo */
-  background-color: #ffffff;
+@media (min-width: 768px) {
+  .nav-wrapper .offcanvas {
+    height: 100% !important;
+  }
+
+  .nav-wrapper .offcanvas-body {
+    flex-grow: 1;
+    /* fill the offcanvas vertically */
+    align-items: stretch;
+  }
+
+  .nav-wrapper .navbar-nav {
+    align-items: stretch;
+    /* pills fill the full height */
+  }
+}
+
+
+.text-logo {
+  background-color: white;
   padding: 12px 20px;
   border-radius: 50px;
-  border: none; 
+  border: none;
   font-family: "MuseoModerno", sans-serif;
   font-size: 28px;
-  color: #2b3674; 
+  color: #2b3674;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   letter-spacing: 0;
+  height: 100%;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.nav-pill { /* Navbar */
-  display: inline-flex; 
+.nav-pill {
+  display: inline-flex;
   align-items: center;
-  padding: 2px 4px;
   background-color: #ffffff;
   border-radius: 50px;
-  border: 1px solid #262F50; 
+  border: 1px solid #262F50;
+  height: 100%;
   font-family: "Myanmar Sans Pro", sans-serif;
   font-size: 16px;
+  padding: 0 4px;
   gap: 4px;
 }
 
-.nav-item { /* Nav Items */
+.nav-item {
   text-decoration: none;
   color: #262F50;
-  padding: 12px 48px;
+  padding: 8px 20px;
   border-radius: 50px;
-  /*transition: all .5s ease; */
 }
 
-.nav-item.active { /* Active Item */
+.nav-item.active {
   background-color: #262F50;
   color: #ffffff;
 }
 
 /* WELCOME & KPI */
 
-.welcome-section { /* Section */
+.welcome-section {
+  /* Section */
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: .5rem;
+  margin-top: 1rem;
 }
 
-.greeting-wrapper { /* Left Side Section */
+.greeting-wrapper {
+  /* Left Side Section */
   display: flex;
   flex-direction: column;
   text-align: left;
+  min-width: 0;
 }
 
-.greeting-text { /* Text Greeting */
+.greeting-text {
+  /* Text Greeting */
   font-family: "Myanmar Khyay", sans-serif;
   font-size: 64px;
   font-weight: 600;
   color: #262F50;
   margin: 0;
   padding: 0;
-  line-height: 1;
+  line-height: 1.1;
 }
 
-.text-purple { /* Accent Color */
+.text-purple {
   color: #8b5cf6;
   margin: 0;
   padding: 0;
 }
 
-.greeting-subtext, .kpi-label {
+.greeting-subtext,
+.kpi-label {
   color: #262F50;
   font-family: "Myanmar Sans Pro", sans-serif;
   font-size: 1rem;
@@ -113,26 +136,76 @@ body {
   padding: 0;
 }
 
-.kpi-container { /* Right Side Section */
+.kpi-container {
   display: flex;
   gap: 3rem;
+  height: 100%;
 }
 
-.kpi-item { /* KPI Item */
+.kpi-item {
+  /* KPI Item */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.kpi-value { /* KPI Value */
+.kpi-value {
+  /* KPI Value */
   width: 100%;
   font-family: "Myanmar Khyay", sans-serif;
   text-align: right;
   font-size: 64px;
   color: #8b5cf6;
-  font-weight: 500;
-  line-height: 1;
+  line-height: 1.1;
+  height: 100%;
   margin: 0;
   padding: 0;
+}
 
+/* Dashboard */
+
+.dashboard-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dash-card {
+  background: red;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.dash-wide {
+  grid-column: span 2;
+  background: blue;
+}
+
+/* ----- MEDIUM SCREENS ----- */
+
+
+@media (max-width: 768px) {
+
+  .welcome-section {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .kpi-container {
+    align-self: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+    gap: 0;
+    width: 80%;
+  }
+
+  .kpi-item {
+    align-self: center;
+  }
+
+  .dash-wide,
+  .dash-card:first-child {
+    grid-column: span 1;
+  }
 }

@@ -3,6 +3,8 @@ import TextLogo from './components/atom/text-logo.jsx';
 import NavigationBar from './components/organism/navbar.jsx';
 import Dashboard from './pages/dashboard.jsx';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Experience = () => <div><h2>Experience</h2></div>;
 const Projects = () => <div><h2>Projects</h2></div>;
