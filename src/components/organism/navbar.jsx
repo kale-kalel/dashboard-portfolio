@@ -1,8 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
 const NavigationBar = () => {
-
-  // This safely closes the offcanvas without blocking React Router
   const closeMenu = () => {
     const closeButton = document.querySelector('#offcanvasNavbar .btn-close');
     if (closeButton) {
@@ -11,13 +9,11 @@ const NavigationBar = () => {
   };
 
   return (
-    <div className="nav-wrapper">
-      <nav className="navbar navbar-expand-md">
-        <div className="container-fluid justify-content-end justify-content-md-center">
-
-          {/* Hamburger Button */}
+    <div className="nav-wrapper h-100">
+      <nav className="navbar navbar-expand-md h-100 p-0">
+        <div className="container-fluid h-100 p-0 m-0 align-items-stretch justify-content-end justify-content-md-center">
           <button
-            className="navbar-toggler bg-white"
+            className="navbar-toggler bg-white align-self-center"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
@@ -27,32 +23,27 @@ const NavigationBar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* Offcanvas Wrapper */}
           <div
-            className="offcanvas offcanvas-end"
+            className="offcanvas offcanvas-end h-100"
             tabIndex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
           >
-
             <div className="offcanvas-header">
-              <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
               <button
                 type="button"
-                className="btn-close"
+                className="btn-close mt-1 me-1"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               ></button>
             </div>
 
-            <div className="offcanvas-body justify-content-center">
+            <div className="offcanvas-body justify-content-center align-items-center pt-5 ps-5 pt-md-0 ps-md-0">
               <div className="navbar-nav nav-pill">
-
-                {/* Notice we removed data-bs-dismiss and added onClick={closeMenu} */}
                 <NavLink
                   to="/"
                   end
-                  className={({ isActive }) => isActive ? "nav-link nav-item active" : "nav-link nav-item"}
+                  className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}
                   onClick={closeMenu}
                 >
                   Dashboard
@@ -60,7 +51,7 @@ const NavigationBar = () => {
 
                 <NavLink
                   to="/experience"
-                  className={({ isActive }) => isActive ? "nav-link nav-item active" : "nav-link nav-item"}
+                  className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}
                   onClick={closeMenu}
                 >
                   Experience
@@ -68,12 +59,11 @@ const NavigationBar = () => {
 
                 <NavLink
                   to="/projects"
-                  className={({ isActive }) => isActive ? "nav-link nav-item active" : "nav-link nav-item"}
+                  className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}
                   onClick={closeMenu}
                 >
                   Projects
                 </NavLink>
-
               </div>
             </div>
           </div>

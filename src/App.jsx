@@ -12,8 +12,8 @@ const Projects = () => <div><h2>Projects</h2></div>;
 function App() {
   return (
     <BrowserRouter>
-      <div className="container">
-        <header className="top-header">
+      <div className="px-4 py-3">
+        <header className="top-header mb-3">
           <TextLogo />
           <NavigationBar />
         </header>

@@ -11,7 +11,7 @@ const KPI = ({ value, text }) => {
 
 const WelcomeKpi = () => {
   return (
-    <div className="welcome-section">
+    <div className="welcome-section mb-3">
       <div className="greeting-wrapper">
         <h1 className="greeting-text">
           Hi, I’m <span className="text-purple">Kalel</span>
