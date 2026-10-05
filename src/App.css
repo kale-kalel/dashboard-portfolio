@@ -208,6 +208,86 @@ body {
   pointer-events: auto;
 }
 
+/* EXPERIENCE */
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  align-items: start;
+}
+
+.experience-card {
+  height: 350px;
+  max-height: none;
+  overflow: hidden;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.experience-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #d9e0e8;
+}
+
+.experience-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.experience-card-content {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.experience-card-content h3 {
+  margin: 0;
+  font-family: "Myanmar Sans Pro", sans-serif;
+  font-size: 16px;
+  color: #12192f;
+}
+
+.experience-card-content p {
+  margin: 0;
+  font-family: "Myanmar Sans Pro", sans-serif;
+  font-size: 14px;
+  color: #12192f;
+}
+
+.experience-card-content span {
+  margin-top: 2px;
+  font-family: "Myanmar Sans Pro", sans-serif;
+  font-size: 12px;
+  color: #9a9a9a;
+}
+
+/* DETAILS BUTTON */
+.experience-card-content button {
+  margin-top: auto;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 50px;
+  background: #262f50;
+  color: white;
+  font-family: "Myanmar Sans Pro", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.experience-card-content button:hover {
+  background: #8b5cf6;
+}
+
 /* MODAL */
 
 .modal-header {
@@ -229,6 +309,54 @@ body {
 
 .modal-content h5 {
   font-weight: 600;
+}
+
+/* PROJECTS */
+
+.projects-page {
+  width: 100%;
+}
+
+.projects-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #262F50;
+  font-family: 'Myanmar Khyay', sans-serif;
+}
+
+.projects-carousel {
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-link {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+
+.project-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.project-carousel-arrow {
+  color: #262F50;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1;
+  background-image: none;
 }
 
 /* ---------- MEDIUM SCREENS ---------- */
